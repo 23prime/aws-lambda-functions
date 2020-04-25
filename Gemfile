@@ -4,8 +4,9 @@ source 'https://rubygems.org'
 
 ruby '2.7.1'
 
+gem 'dotenv'
+
 group :test do
-  gem 'dotenv'
   gem 'rspec'
 end
 
@@ -16,5 +17,3 @@ group :development do
   gem 'ruby-debug-ide'
   gem 'solargraph'
 end
-
-

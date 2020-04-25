@@ -1,0 +1,38 @@
+name: aws-lambda-functions
+
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - "**.md"
+      - "**.json"
+      - "**.yml"
+  pull_request:
+    branches:
+      - master
+    paths-ignore:
+      - "**.md"
+      - "**.json"
+      - "**.yml"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Ruby 2.7
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.7
+      - name: Test with RSpec
+        env:
+          LINE_CHANNEL_TOKEN: ${{ secrets.LINE_CHANNEL_TOKEN }}
+          MY_USER_ID: ${{ secrets.MY_USER_ID }}
+          NGA_GROUP_ID: ${{ secrets.NGA_GROUP_ID }}
+          KMT_GROUP_ID: ${{ secrets.KMT_GROUP_ID }}
+        run: |
+          gem install bundler -v 2.1.4
+          bundle install --without development
+          bundle exec rspec
