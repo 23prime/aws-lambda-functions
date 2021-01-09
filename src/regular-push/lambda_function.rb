@@ -7,7 +7,11 @@ def lambda_handler(event:, context:)
 end
 
 def send_push_msg(target)
-  uri = URI.parse('https://gokabot.com/gokabot-line-dev/push/random')
+  base_uri = ENV.fetch('GOKABOT_BASE_URI', nil)
+
+  return 500 if base_uri.nil?
+
+  uri = URI.parse(base_uri + '/push/random')
   params = { target: target }
   response = Net::HTTP.post_form(uri, params)
   return response.code
