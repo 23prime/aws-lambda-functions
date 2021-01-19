@@ -11,7 +11,7 @@ def send_push_msg(target)
 
   return 500 if base_uri.nil?
 
-  uri = URI.parse(base_uri + '/push/random')
+  uri = URI.parse(base_uri + '/line/push/random')
   params = { target: target }
   response = Net::HTTP.post_form(uri, params)
   return response.code
