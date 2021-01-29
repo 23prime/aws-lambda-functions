@@ -1,5 +1,6 @@
 AllCops:
   TargetRubyVersion: 2.7
+  NewCops: enable
 
 Layout/EmptyLineAfterGuardClause:
   Enabled: false
@@ -10,10 +11,49 @@ Layout/LineLength:
 Layout/SpaceAroundMethodCallOperator:
   Enabled: true
 
+Layout/SpaceBeforeBrackets:
+  Enabled: true
+
+Lint/AmbiguousAssignment:
+  Enabled: true
+
+Lint/DeprecatedConstants:
+  Enabled: true
+
+Lint/DuplicateBranch:
+  Enabled: true
+
+Lint/DuplicateRegexpCharacterClassElement:
+  Enabled: true
+
+Lint/EmptyBlock:
+  Enabled: true
+
+Lint/EmptyClass:
+  Enabled: true
+
+Lint/LambdaWithoutLiteralBlock:
+  Enabled: true
+
+Lint/NoReturnInBeginEndBlocks:
+  Enabled: true
+
 Lint/RaiseException:
   Enabled: true
 
 Lint/StructNewOverride:
+  Enabled: true
+
+Lint/RedundantDirGlobSort:
+  Enabled: true
+
+Lint/ToEnumArguments:
+  Enabled: true
+
+Lint/UnexpectedBlockArity:
+  Enabled: true
+
+Lint/UnmodifiedReduceAccumulator:
   Enabled: true
 
 Metrics/AbcSize:
@@ -34,14 +74,26 @@ Naming/MethodParameterName:
 Style/AsciiComments:
   Enabled: false
 
+Style/ArgumentsForwarding:
+  Enabled: true
+
 Style/BlockDelimiters:
   Enabled: false
 
 Style/ClassVars:
   Enabled: false
 
+Style/CollectionCompact:
+  Enabled: true
+
 Style/Documentation:
   Enabled: false
+
+Style/DocumentDynamicEvalDefinition:
+  Enabled: true
+
+Style/EndlessMethod:
+  Enabled: true
 
 Style/ExponentialNotation:
   Enabled: true
@@ -53,6 +105,9 @@ Style/GlobalVars:
   Enabled: false
 
 Style/HashEachMethods:
+  Enabled: true
+
+Style/HashExcept:
   Enabled: true
 
 Style/HashTransformKeys:
@@ -67,8 +122,20 @@ Style/IfUnlessModifier:
 Style/MutableConstant:
   Enabled: false
 
+Style/NegatedIfElseCondition:
+  Enabled: true
+
+Style/NilLambda:
+  Enabled: true
+
+Style/RedundantArgument:
+  Enabled: true
+
 Style/RedundantReturn:
   Enabled: false
 
 Style/RescueStandardError:
   Enabled: false
+
+Style/SwapValues:
+  Enabled: true

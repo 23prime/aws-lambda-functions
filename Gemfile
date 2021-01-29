@@ -8,6 +8,7 @@ gem 'dotenv'
 
 group :test do
   gem 'rspec'
+  gem 'rubocop-rspec'
 end
 
 group :development do
