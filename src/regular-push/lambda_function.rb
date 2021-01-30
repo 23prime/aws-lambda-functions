@@ -9,12 +9,14 @@ def lambda_handler(event:, context:)
   send_to_discord
 end
 
-def send_to_line(target)
+def send_to_line(target_id)
   return 500 if BASE_URI.nil?
 
   uri = URI.parse("#{BASE_URI}/line/push/random")
-  params = { target: target }
-  response = Net::HTTP.post_form(uri, params)
+  headers = { 'Content-Type' => 'application/json' }
+  params = { 'target_id' => target_id }
+
+  response = Net::HTTP.post(uri, params.to_json, headers)
   return response.code
 end
 
