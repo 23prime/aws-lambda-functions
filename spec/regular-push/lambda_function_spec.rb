@@ -9,7 +9,7 @@ describe 'regular-push' do
 
   context 'Discord' do
     it 'Correct request' do
-      expect(send_to_discord).to eq '200'
+      expect(send_to_discord(ENV['DISCORD_TARGET_CHANNEL_ID'])).to eq '200'
     end
   end
 end
