@@ -3,7 +3,7 @@ require 'net/http'
 
 require 'aws-sdk-ssm'
 
-def lambda_handler(event)
+def lambda_handler(event:, context:)
   ssm_params = get_ssm_params
   token = ssm_params['token']
   target_ids = ssm_params['target_ids']
